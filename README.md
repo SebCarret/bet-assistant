@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Bet-assistant is a [Next.js](https://nextjs.org/) project created with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and customized with [`Ant Design`](https://ant.design/)
+
+## Before Starting
+
+This app uses [API Football](https://www.api-football.com/) to get predictions on a fixture.
+
+First, create an account and get your free API key.
+
+Then, create a `env.local` file at the root of your folder, and add your API key like on the `env.example` file :
+
+```
+API_FOOTBALL_KEY = 'Your API football key here'
+```
 
 ## Getting Started
 
-First, run the development server:
+Once your API key is set, install node modules :
 
-```bash
+```
+npm install
+```
+
+Then start the app :
+
+```
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The first page you can see on launch is `pages/index.js`, which displays a list of incoming matchs in Ligue 1 (french championship).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+When you click on details button, a Football API endpoint is called. You can edit it on `pages/api/pronostics/[matchId].js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+A new page with teams statistics is also displayed, feel free tu customize it on `pages/match/[id].js`!
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about this app, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Ant Design components](https://ant.design/components/overview/) - learn about Ant Design components.
+- [Football API Documentation](https://www.api-football.com/documentation-v3#operation/get-predictions) - learn about predictions endpoint.
